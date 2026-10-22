@@ -1,0 +1,198 @@
+
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #fff8f5;
+    color: #624b4b;
+    font-family: "Century Gothic", serif;
+    text-align: center;
+    line-height: 1.7;
+}
+
+/* Header */
+header {
+    background-color: #f8dfe3;
+    padding: 25px 20px;
+    border-bottom: 2px solid #edc3cd;
+}
+
+header h1 {
+    font-family: "Architects Daughter", serif;
+    color: #a65f75;
+    font-size: 42px;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+nav a {
+    color: #815363;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #d47791;
+}
+
+/* Main content */
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 25px;
+}
+
+section {
+    margin-bottom: 60px;
+}
+
+section h1 {
+    color: #a65f75;
+    font-size: 36px;
+    margin: 25px 0;
+}
+
+section h2,
+footer h2 {
+    color: #a65f75;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+main > section:first-child > img:first-child {
+    width: 320px;
+    margin: 20px auto;
+}
+
+main > section:first-child > img:nth-of-type(2) {
+    width: 100px;
+    margin: 10px auto;
+}
+
+#about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    background-color: #fbe9eb;
+    padding: 35px 20px;
+    border-radius: 25px;
+}
+
+#about img {
+    width: 250px;
+    border-radius: 18px;
+    transition: transform 0.3s ease;
+}
+
+#about img:hover {
+    transform: translateY(-5px);
+}
+
+/* Story text */
+main > section:first-child p {
+    max-width: 750px;
+    margin: 20px auto;
+    font-size: 17px;
+    line-height: 1.9;
+    color: #765e60;
+}
+
+/* Menu, delivery and reservation */
+#menu,
+#delivery,
+#reserve {
+    padding: 35px 20px;
+    background-color: #fff0f2;
+    border: 1px solid #f1d3d9;
+    border-radius: 20px;
+}
+
+#reserve a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 28px;
+    background-color: #d991a5;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+}
+
+#reserve a:hover {
+    background-color: #b96f86;
+}
+
+/* Footer */
+footer {
+    background-color: #f3d6dd;
+    padding: 35px 20px;
+    color: #815363;
+}
+
+/* Mobile version */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 34px;
+    }
+
+    nav {
+        gap: 12px 18px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    section h1 {
+        font-size: 28px;
+    }
+
+    section h2,
+    footer h2 {
+        font-size: 24px;
+    }
+
+    main {
+        padding: 25px 15px;
+    }
+
+    #about {
+        gap: 15px;
+    }
+
+    #about img {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    main > section:first-child p {
+        font-size: 15px;
+    }
+}
