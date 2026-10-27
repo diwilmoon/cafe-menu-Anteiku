@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* ==========================================================
    ПЕРЕМЕННЫЕ: цвета и размеры в одном месте.
    Хочешь поменять цвет сайта - меняй здесь, и он поменяется везде.
@@ -12,6 +13,10 @@
 }
 
 /* ---------- Общие стили ---------- */
+=======
+
+/* General styles */
+>>>>>>> 9afb7298b18ef0bf45e22ea9a574f4b12cdc53c4
 * {
     margin: 0;
     padding: 0;
@@ -23,6 +28,7 @@ html {
 }
 
 body {
+<<<<<<< HEAD
     background-color: #F9ECEA;
     color: var(--pink);
     font-family: "Century Gothic", "Comfortaa", sans-serif;
@@ -99,11 +105,47 @@ img {
 
 .main-nav a {
     color: var(--pink);
+=======
+    background-color: #fff8f5;
+    color: #624b4b;
+    font-family: "Century Gothic", serif;
+    text-align: center;
+    line-height: 1.7;
+}
+
+/* Header */
+header {
+    background-color: #f8dfe3;
+    padding: 25px 20px;
+    border-bottom: 2px solid #edc3cd;
+}
+
+header h1 {
+    font-family: "Architects Daughter", serif;
+    color: #a65f75;
+    font-size: 42px;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+nav a {
+    color: #815363;
+>>>>>>> 9afb7298b18ef0bf45e22ea9a574f4b12cdc53c4
     text-decoration: none;
     font-size: 16px;
     transition: color 0.3s ease;
 }
 
+<<<<<<< HEAD
 .main-nav a:hover {
     color: #f38d99;
 }
@@ -266,6 +308,19 @@ img {
    БУДУЩИЕ СТРАНИЦЫ (меню, доставка, бронь, подвал).
    Заготовки сохранены из твоего кода - пока на сайте их нет.
    ========================================================== */
+=======
+nav a:hover {
+    color: #d47791;
+}
+
+/* Main content */
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 25px;
+}
+
+>>>>>>> 9afb7298b18ef0bf45e22ea9a574f4b12cdc53c4
 section {
     margin-bottom: 60px;
 }
@@ -283,6 +338,57 @@ footer h2 {
     margin-bottom: 20px;
 }
 
+<<<<<<< HEAD
+=======
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+main > section:first-child > img:first-child {
+    width: 320px;
+    margin: 20px auto;
+}
+
+main > section:first-child > img:nth-of-type(2) {
+    width: 100px;
+    margin: 10px auto;
+}
+
+#about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    background-color: #fbe9eb;
+    padding: 35px 20px;
+    border-radius: 25px;
+}
+
+#about img {
+    width: 250px;
+    border-radius: 18px;
+    transition: transform 0.3s ease;
+}
+
+#about img:hover {
+    transform: translateY(-5px);
+}
+
+/* Story text */
+main > section:first-child p {
+    max-width: 750px;
+    margin: 20px auto;
+    font-size: 17px;
+    line-height: 1.9;
+    color: #765e60;
+}
+
+/* Menu, delivery and reservation */
+>>>>>>> 9afb7298b18ef0bf45e22ea9a574f4b12cdc53c4
 #menu,
 #delivery,
 #reserve {
@@ -307,12 +413,17 @@ footer h2 {
     background-color: #b96f86;
 }
 
+<<<<<<< HEAD
+=======
+/* Footer */
+>>>>>>> 9afb7298b18ef0bf45e22ea9a574f4b12cdc53c4
 footer {
     background-color: #f3d6dd;
     padding: 35px 20px;
     color: #815363;
 }
 
+<<<<<<< HEAD
 /* ==========================================================
    АДАПТИВ: планшеты и телефоны.
    @media срабатывает, когда экран УЖЕ указанной ширины.
@@ -410,5 +521,45 @@ footer {
     .about-text p:not(.label) {
         font-size: 16px;
         line-height: 1.8;
+=======
+/* Mobile version */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 34px;
+    }
+
+    nav {
+        gap: 12px 18px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    section h1 {
+        font-size: 28px;
+    }
+
+    section h2,
+    footer h2 {
+        font-size: 24px;
+    }
+
+    main {
+        padding: 25px 15px;
+    }
+
+    #about {
+        gap: 15px;
+    }
+
+    #about img {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    main > section:first-child p {
+        font-size: 15px;
+>>>>>>> 9afb7298b18ef0bf45e22ea9a574f4b12cdc53c4
     }
 }
