@@ -1,0 +1,287 @@
+
+/* GENERAL SETTINGS */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #faecea;
+  color: #a64f5c;
+  font-family: Arial, sans-serif;
+}
+
+/* NAVIGATION BAR */
+
+.navbar {
+  min-height: 82px;
+  padding: 20px 4%;
+  background-color: #fffaf8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+/* LOGO */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #cb7782;
+  flex-shrink: 0;
+}
+
+.logo-icon {
+  font-size: 30px;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-size: 23px;
+  letter-spacing: 1px;
+}
+
+.logo-text small {
+  font-size: 8px;
+  margin-top: 2px;
+}
+
+/* NAVIGATION LINKS */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+}
+
+.nav-links a {
+  color: #c96f7a;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #93434e;
+}
+
+.nav-links .active {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* RESERVATION BUTTON */
+
+.reserve-btn {
+  padding: 10px 16px;
+  border-radius: 30px;
+  background-color: #c97681;
+  color: white;
+  text-decoration: none;
+  white-space: nowrap;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.reserve-btn:hover {
+  background-color: #ae5b68;
+}
+
+/* MAIN MENU */
+
+.menu-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 45px 0 55px;
+}
+
+/* GRID WITH SIX CARDS */
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+/* MENU CARD */
+
+.menu-card {
+  min-width: 0;
+  padding: 7px;
+  background-color: #fffaf8;
+  border: 1px solid #e7b4b9;
+  border-radius: 3px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.menu-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px #c9768120;
+}
+
+/* IMAGE */
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 108px;
+  border-radius: 7px;
+  overflow: hidden;
+}
+
+.image-container img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* SMALL LABEL ON IMAGE */
+
+.image-tag {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  padding: 4px 8px;
+  border-radius: 5px;
+  background-color: #fffaf8;
+  color: #b96a74;
+  font-size: 9px;
+  font-style: italic;
+  transform: rotate(-3deg);
+}
+
+/* CARD TEXT */
+
+.card-info {
+  padding: 7px 3px 5px;
+}
+
+.card-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.card-heading h2 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 1.4;
+}
+
+.price {
+  padding-top: 2px;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.card-info p {
+  margin: 6px 0 0;
+  color: #bd7b82;
+  font-size: 9px;
+  line-height: 1.6;
+}
+
+/* CATEGORY BUTTONS */
+
+.category-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 24px;
+}
+
+.category-btn {
+  padding: 8px 17px;
+  border: 1px solid #edc3c6;
+  border-radius: 25px;
+  background-color: #fffaf8;
+  color: #c87580;
+  font-family: inherit;
+  font-size: 11px;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.category-btn:hover,
+.category-btn.selected {
+  background-color: #c97681;
+  border-color: #c97681;
+  color: white;
+}
+
+/* TABLETS */
+
+@media (max-width: 850px) {
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-links {
+    gap: 20px;
+  }
+
+  .menu-container {
+    width: 90%;
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* MOBILE PHONES */
+
+@media (max-width: 500px) {
+  .navbar {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .menu-container {
+    width: 92%;
+    padding-top: 25px;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .image-container {
+    height: 180px;
+  }
+
+  .card-heading h2 {
+    font-size: 15px;
+  }
+
+  .card-info p {
+    font-size: 11px;
+  }
+
+  .price {
+    font-size: 12px;
+  }
+}
