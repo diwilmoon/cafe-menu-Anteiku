@@ -55,6 +55,7 @@ img {
 
 /* Кот + название в одну строку */
 .brand {
+    transform: translateX(-30px);
     display: flex;
     align-items: center;
     gap: 10px;
@@ -97,8 +98,6 @@ img {
     gap: 8px clamp(20px, 7vw, 100px);
     font-family: "Comfortaa", sans-serif;
     word-spacing: 2px;
-    margin-left: 50px;
-    margin-right: auto;
 }
 
 .main-nav a {
@@ -129,6 +128,27 @@ text-shadow: none;
     text-decoration: underline;
     text-underline-offset: 5px;
     text-decoration-thickness: 1px;
+}
+
+/*ниже кнопка брони стола в шапке меню*/
+.reserve-btn {
+    display: inline-block;
+    padding: 6px 14px;
+    border: 2px solid var(--pink);
+    border-radius: 20px;
+    color: white !important;
+    font-weight: normal !important;
+    text-shadow: none !important;
+    background-color: var(--pink);
+    text-decoration: none;
+    white-space: nowrap;
+    font-size: 20px !important;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.reserve-btn:hover {
+    background-color: #f38d99;
+    color: var(--pink);
 }
 
 /* ==========================================================
@@ -336,55 +356,137 @@ text-shadow: none;
     transform: translateY(-54%);
 }
 
-/* ==========================================================
-   БУДУЩИЕ СТРАНИЦЫ (меню, доставка, бронь, подвал).
-   Заготовки сохранены из твоего кода - пока на сайте их нет.
-   ========================================================== */
-section {
-    margin-bottom: 60px;
+
+
+/*страница меню*/
+
+
+/* MAIN MENU */
+
+.menu-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 45px 0 55px;
 }
 
-section h1 {
-    color: #a65f75;
-    font-size: 36px;
-    margin: 25px 0;
+/* GRID WITH SIX CARDS */
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
 }
 
-section h2,
-footer h2 {
-    color: #a65f75;
-    font-size: 30px;
-    margin-bottom: 20px;
+/* MENU CARD */
+
+.menu-card {
+  min-width: 0;
+  padding: 7px;
+  background-color: #fffaf8;
+  border: 1px solid #e7b4b9;
+  border-radius: 3px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-#menu,
-#delivery,
-#reserve {
-    padding: 35px 20px;
-    background-color: #fff0f2;
-    border: 1px solid #f1d3d9;
-    border-radius: 20px;
+.menu-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px #c9768120;
 }
 
-#reserve a {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 28px;
-    background-color: #d991a5;
-    color: white;
-    text-decoration: none;
-    border-radius: 30px;
-    transition: background-color 0.3s ease;
+/* IMAGE */
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 108px;
+  border-radius: 7px;
+  overflow: hidden;
 }
 
-#reserve a:hover {
-    background-color: #b96f86;
+.image-container img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-footer {
-    background-color: #f3d6dd;
-    padding: 35px 20px;
-    color: #815363;
+/* SMALL LABEL ON IMAGE */
+
+.image-tag {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  padding: 4px 8px;
+  border-radius: 5px;
+  background-color: #fffaf8;
+  color: #b96a74;
+  font-size: 9px;
+  font-style: italic;
+  transform: rotate(-3deg);
+}
+
+/* CARD TEXT */
+
+.card-info {
+  padding: 7px 3px 5px;
+}
+
+.card-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.card-heading h2 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 1.4;
+}
+
+.price {
+  padding-top: 2px;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.card-info p {
+  margin: 6px 0 0;
+  color: #bd7b82;
+  font-size: 9px;
+  line-height: 1.6;
+}
+
+/* CATEGORY BUTTONS */
+
+.category-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 24px;
+}
+
+.category-btn {
+  padding: 8px 17px;
+  border: 1px solid #edc3c6;
+  border-radius: 25px;
+  background-color: #fffaf8;
+  color: #c87580;
+  font-family: inherit;
+  font-size: 11px;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.category-btn:hover,
+.category-btn.selected {
+  background-color: #c97681;
+  border-color: #c97681;
+  color: white;
 }
 
 /* ==========================================================
