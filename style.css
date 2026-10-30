@@ -144,15 +144,15 @@ text-shadow: none;
     margin: 30px auto;
     padding: 40px clamp(20px, 5vw, 70px);
     background-color: #ffffff;
-    border-radius: 20px;
-    border: 5px solid var(--border);
+    border-radius: 40px;
+    border: 7px solid var(--border);
 }
 
 /* ---------- Текст ---------- */
 .text-container {
     flex: 1 1 0;
     min-width: 0;                  /* позволяет тексту сжиматься и переноситься */
-    text-align: center;
+    text-align: left;
     color: var(--brown);
 }
 
@@ -161,17 +161,19 @@ text-shadow: none;
     font-size: clamp(28px, 3.4vw, 48px);
     color: var(--pink);
     letter-spacing: 0.5px;
-    margin-bottom: 10px;
+    transform: translateY(-20px);
+    max-width: 500px;
 }
 
 #text-introduction {
     font-family: "Comfortaa", sans-serif;
     font-size: clamp(16px, 1.7vw, 24px);
-    max-width: 480px;
+    max-width: 550px;
     margin: 30px auto 0;           /* auto по бокам = блок по центру */
     text-align: left;
     line-height: 1.5;
     color: #C7767F;
+    transform: translateX(-60px) translateY(-10px);
 }
 
 /* ---------- Кнопки ---------- */
@@ -187,7 +189,7 @@ text-shadow: none;
 .delivery {
     display: inline-block;
     padding: 12px 25px;
-    border: 1px solid var(--pink);
+    border: 2.5px solid var(--pink);
     border-radius: 15px;
     text-decoration: none;
     font-family: "Comfortaa", sans-serif;
@@ -195,6 +197,10 @@ text-shadow: none;
     cursor: pointer;
     /* transition должен стоять здесь, а не в :hover - тогда плавно и в обе стороны */
     transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    transform: translateX(-80px);
+}
+.home-page .view {
+    margin-right: 40px;
 }
 
 .view {
@@ -241,7 +247,9 @@ text-shadow: none;
 /* ==========================================================
    СТРАНИЦА "ABOUT"
    ========================================================== */
-
+.about-page {
+    overflow-x: hidden;
+}
 .about-box {
     position: relative;
     display: flex;
@@ -259,10 +267,11 @@ text-shadow: none;
     position: relative;
     z-index: 1;
     width: 55%;
-    text-align: left;
+    text-align: center;
     display:flex;
     flex-direction: column;
     align-items: flex-start;
+    transform: translateX(-40px);
 }
 
 .about-text .label {
@@ -275,13 +284,15 @@ text-shadow: none;
     text-transform: uppercase;
     color: #BB7775;
     text-transform: none;
+    transform: translateY(25px);
 }
 
 .about-text #introduction {
     text-align: left;
+    transform: translateX(-30px);
     color: #A84953;
     margin-bottom: 20px;
-     font-family: "Whisper", cursive;
+    font-family: "Whisper", cursive;
     font-weight: 400;
     font-style: normal;
     font-size: clamp(36px, 7vw, 100px);
@@ -299,6 +310,7 @@ text-shadow: none;
     font-size: 17px;
     line-height: 1.9;
     color: #A84953;
+    transform: translateY(-10px);
 }
 
 .about-text a{
@@ -310,9 +322,9 @@ text-shadow: none;
     font-family: "Comfortaa", sans-serif;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s
+    transition: background-color 0.3s;
+    transform: translateX(-161%) translateY(-50px);
 }
-
 
 .about-image {
     position: absolute;
@@ -321,7 +333,7 @@ text-shadow: none;
     max-width: none;
     right: -18%;
     top: 55%;
-    transform: translateY(-53%);
+    transform: translateY(-54%);
 }
 
 /* ==========================================================
