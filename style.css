@@ -24,6 +24,7 @@ body {
     color: var(--pink);
     font-family: "Century Gothic", "Comfortaa", sans-serif;
     line-height: 1.5;
+    cursor: pointer;
 }
 
 img {
@@ -67,7 +68,7 @@ img {
     width: 60px;
     height: auto;
     flex-shrink: 0;                /* чтобы кот не сжимался, когда мало места */
-    transform: rotateY('5px');
+   /* transform: rotateY('5px'); */
 }
 
 .brand-text {
@@ -200,28 +201,31 @@ text-shadow: none;
 .buttons {
     display: flex;
     flex-wrap: wrap;
-    gap: 16px 40px;
+    gap: 16px 24px;
     max-width: 480px;
     margin: 60px auto 0;
+    transform: translateX(-80px);   /* сдвигаем ОДИН раз весь блок, а не каждую кнопку */
 }
 
 .home-page .view,
 .delivery {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 0;                    /* обе кнопки одинаковой ширины */
+    min-width: 190px;
     padding: 12px 25px;
     border: 2.5px solid var(--pink);
     border-radius: 15px;
     text-decoration: none;
     font-family: "Comfortaa", sans-serif;
     font-size: 16px;
+    white-space: nowrap;
     cursor: pointer;
-    /* transition должен стоять здесь, а не в :hover - тогда плавно и в обе стороны */
     transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
-    transform: translateX(-80px);
+    /* transform и margin-right отсюда убраны */
 }
-.home-page .view {
-    margin-right: 40px;
-}
+
 
 .view {
     color: #ffffff;
@@ -459,8 +463,6 @@ text-shadow: none;
   line-height: 1.6;
 }
 
-/* CATEGORY BUTTONS */
-
 .category-buttons {
   display: flex;
   justify-content: center;
@@ -495,7 +497,7 @@ text-shadow: none;
    ========================================================== */
 
 /* Планшет (до 860px): шапка в столбик, картинка уходит под текст */
-@media (max-width: 860px) {
+@media (max-width: 480px) {
     .header-inner {
         flex-direction: column;
         justify-content: center;
@@ -525,14 +527,38 @@ text-shadow: none;
         width: min(400px, 80%);
     }
 
-    #text-introduction {
-        text-align: center;
+  
+.buttons {
+    justify-content: center;
+    margin-top: 40px;
+    transform: none;
+}
+
+.view,
+.delivery {
+    margin-left: 0;
+    padding: 13px 20px;
+    font-size: 15px;
+}
+
+    #introduction {
+        letter-spacing: 0;
+        text-align: left;
+        padding-left: 10%;
+        padding-top:10px;
     }
 
-    .buttons {
-        justify-content: center;
-        margin-top: 40px;
+    #text-introduction {
+        text-align: left;
+        margin: 10px auto 0;
+        padding-left: 30%;
     }
+   
+        .main-nav a {
+        font-size: 15px;
+        margin: 10px auto 0;
+
+        }
 
     .about-text {
         text-align: center;
@@ -549,17 +575,21 @@ text-shadow: none;
 }
 
 /* Телефон (до 480px) */
-@media (max-width: 480px) {
+@media (max-width: 1024px) and (min-width: 680px) {
     .logo {
         width: 48px;
+        margin-left:250px;
+       
     }
 
-    .brand-name {
+    .brand-name {gi
         font-size: 22px;
     }
 
     .main-nav {
-        gap: 8px 18px;
+        gap: 5px 25px;
+       
+        padding-left: 100px;
     }
 
     .main-nav a {
@@ -575,8 +605,28 @@ text-shadow: none;
 
     #introduction {
         letter-spacing: 0;
+        margin-left:10%;
     }
+ 
+    .buttons {
+    justify-content: center;
+    margin-top: 40px;
+    transform: none;
+}
 
+.view,
+.delivery {
+    margin-left: 0;
+    padding: 13px 20px;
+    font-size: 15px;
+}
+    
+#text-introduction {
+        text-align: center;
+        margin: 15px 10px 0;
+        padding-left: 20%;
+        text-align: left;
+    }
     .view,
     .delivery {
         font-size: 15px;
@@ -589,3 +639,55 @@ text-shadow: none;
     }
 }
 
+    
+@media(min-width:1025px) and (max-width: 1366px) {
+    .logo {
+        width: 48px;
+        margin-left:20px;
+    }
+
+    .brand-name {
+        font-size: 22px;
+    }
+
+    .main-nav {
+       gap:30px;
+        margin-left:20px;
+    }
+
+    .main-nav a {
+        font-size: 14px;
+    }
+
+     #text-introduction {
+        text-align: left;
+       padding-left: 80px;
+       margin-left:25px;
+        
+    }
+
+.buttons {
+    justify-content: center;
+    margin-top: 40px;
+    transform: none;
+}
+
+.view,
+.delivery {
+    margin-left: 0;
+    padding: 10px 20px;
+    font-size: 15px;
+}
+
+    .center-container,
+    .about-box {
+        border-width: 4px;
+        gap: 30px;
+        padding: 30px 16px;
+    }
+
+    #introduction {
+        letter-spacing: 0;
+        margin-left:10%;
+    }
+}
