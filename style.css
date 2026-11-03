@@ -463,8 +463,6 @@ text-shadow: none;
   line-height: 1.6;
 }
 
-/* CATEGORY BUTTONS */
-
 .category-buttons {
   display: flex;
   justify-content: center;
