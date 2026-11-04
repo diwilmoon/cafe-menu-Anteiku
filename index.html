@@ -1,59 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anteiku — kawaii cafe</title>
-
-    <!-- Шрифты: без этой строки браузер не знает Comfortaa и Architects Daughter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css">
-</head>
-<body class="home-page">
-
-    <!-- ШАПКА: слева кот + название, справа меню -->
-    <header class="site-header">
-        <div class="header-inner">
-
-            <a href="index.html" class="brand">
-                <img src="image/cat.png" class="logo" alt="Anteiku logo">
-                <div class="brand-text">
-    <span class="brand-name">Anteiku</span>
-    <span class="tagline" data-i18n="tagline">
-        kawaii food, happy moments
-    </span>
 </div>
-            </a>
-<nav class="main-nav">
-
-    <a href="index.html" class="active" aria-current="page" data-i18n="home">Home</a>
-
-    <a href="about.html" data-i18n="about">About</a>
-
-    <a href="menu.html" data-i18n="menu">Menu</a>
-
-    <a href="delivery.html" data-i18n="delivery">Delivery</a>
-
-    <a href="contacts.html" data-i18n="contacts">Contacts</a>
-
-    <div class="language-switch">
-        <button class="lang-btn active-lang" data-lang="en">EN</button>
-        <button class="lang-btn" data-lang="ru">RU</button>
-    </div>
-
-    <button class="register-btn" id="open-register" data-i18n="register">
-        Register
-    </button>
-
-    <a href="booking.html" class="reserve-btn" data-i18n="reserve">
-        Reserve a table
-    </a>
-
-</nav>
-        </div>
     </header>
 
     <!-- ГЛАВНЫЙ БЛОК: текст слева, десерт справа -->
@@ -83,9 +28,24 @@
 </div>
             </div>
 
-            <div class="hero-image">
+            <div class="ice-cream-img">
+                <div class="decor-frame"></div>
                 <img src="image/ice-cream.png" id="ice-cream" alt="Strawberry parfait in a crystal glass">
-                <img src="image/star.png" class="star1" alt="" aria-hidden="true">
+                <svg class="star star1" viewBox="0 0 100 100" aria-hidden="true">
+                    <polygon points="50,0 61,35 98,35 68,57 79,95 50,72 21,95 32,57 2,35 39,35"/>
+                </svg>
+
+                <svg class="star star2" viewBox="0 0 100 100" aria-hidden="true">
+                    <polygon points="50,0 61,35 98,35 68,57 79,95 50,72 21,95 32,57 2,35 39,35"/>
+                </svg>
+
+                <svg class="star star3" viewBox="0 0 100 100" aria-hidden="true">
+                     <polygon points="50,0 61,35 98,35 68,57 79,95 50,72 21,95 32,57 2,35 39,35"/>
+                </svg>
+
+                <svg class="star star4" viewBox="0 0 100 100" aria-hidden="true">
+                    <polygon points="50,0 61,35 98,35 68,57 79,95 50,72 21,95 32,57 2,35 39,35"/>
+                </svg>
             </div>
 
         </div>
