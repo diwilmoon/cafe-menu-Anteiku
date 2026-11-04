@@ -1488,6 +1488,11 @@ body.book-page {
     gap: 18px;
   }
 
+ .text-delivery {
+     align-items: center;
+     margin-left:5%;
+  }
+
   .main-nav {
     gap: 15px;
   }
