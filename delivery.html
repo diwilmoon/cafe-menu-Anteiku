@@ -5,48 +5,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anteiku — kawaii cafe</title>
 
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Comfortaa:wght@400;700&family=Dancing+Script:wght@400&family=League+Gothic&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="delivery.css">
 </head>
 <body class="book-page">
+
     <header class="site-header">
         <div class="header-inner">
 
-            <a href="delivery.html" class="brand">
+            <a href="index.html" class="brand">
                 <img src="image/cat.png" class="logo" alt="Anteiku logo">
                 <div class="brand-text">
-    <span class="brand-name">Anteiku</span>
-    <span class="tagline" data-i18n="tagline">
-        kawaii food, happy moments
-    </span>
-</div>
+                    <span class="brand-name">Anteiku</span>
+                    <span class="tagline" data-i18n="tagline">kawaii food, happy moments</span>
+                </div>
             </a>
-<nav class="main-nav">
 
-    <a href="index.html" class="active" aria-current="page" data-i18n="home">Home</a>
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="menu.html">Menu</a>
+                <a href="delivery.html" class="active" aria-current="page">Delivery</a>
+                <a href="contacts.html">Contacts</a>
+                <a href="reserve.html" class="reserve-btn" data-i18n="reserve">Reserve a table</a>
+            </nav>
 
-    <a href="about.html" data-i18n="about">About</a>
-
-    <a href="menu.html" data-i18n="menu">Menu</a>
-
-    <a href="delivery.html" data-i18n="delivery">Delivery</a>
-
-    <a href="contacts.html" data-i18n="contacts">Contacts</a>
-
-    
-
-    <button class="register-btn" id="open-register" data-i18n="register">
-        Register
-    </button>
-
-    <a href="delivery.html" class="reserve-btn" data-i18n="reserve">
-        Reserve a table
-    </a>
-
-</nav>
         </div>
     </header>
+
+    <main>
+
+        <div class="collage">
+            <img src="image/strawberry.png" class="cake-img" alt="Strawberry cake">
+            <img src="image/kawaii.png" class="bunny-img" alt="Bunny hugging a strawberry cake">
+        </div>
+
+        <section class="how">
+
+            <h1 class="how-title">
+                <svg viewBox="0 0 62 30" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M1 9h8M3 14h6M1 19h8"/>
+                    <path d="M13 6h22v17H13z"/>
+                    <path d="M35 11h9l6 6v6H35z"/>
+                    <circle cx="21" cy="24" r="3"/>
+                    <circle cx="44" cy="24" r="3"/>
+                    <path d="M24 18C20 15 19 13 19 11.5a2.5 2.5 0 0 1 5-.8 2.5 2.5 0 0 1 5 .8C29 13 28 15 24 18z"/>
+                </svg>
+                <span>HOW TO ORDER?</span>
+            </h1>
+            <p class="how-sub">3 simple steps</p>
+
+            <div class="steps">
+                <div class="step">
+                    <h2>1. Choose Your Delights</h2>
+                    <p>Explore our menu and pick your favorite fluffy pancakes, drinks, or sweet desserts.</p>
+                </div>
+
+                <div class="step">
+                    <h2>2. Set your details</h2>
+                    <p>Tell us where to send your order, when you would like it, and whether you prefer delivery, pickup, or a table reservation.</p>
+                </div>
+
+                <div class="step">
+                    <h2>3. Confirm and enjoy</h2>
+                    <p>Confirm your order, receive a confirmation, and wait for your food to arrive or your table to be ready.</p>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Enjoy your favorite Asian dishes, fluffy pancakes and sweet desserts from the comfort of your home.</p>
+        <p>We'll bring a little kawaii magic to your day! 🍰</p>
+    </footer>
+
+</body>
+</html>
