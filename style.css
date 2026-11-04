@@ -1,3 +1,4 @@
+
 :root {
     --pink: #C6767F;          /* основной розовый (текст, кнопки) */
     --brown: #815363;         /* тёмный (меню, заголовки в блоке) */
@@ -23,7 +24,6 @@ body {
     color: var(--pink);
     font-family: "Century Gothic", "Comfortaa", sans-serif;
     line-height: 1.5;
-    cursor: pointer;
 }
 
 img {
@@ -67,7 +67,7 @@ img {
     width: 60px;
     height: auto;
     flex-shrink: 0;                /* чтобы кот не сжимался, когда мало места */
-   /* transform: rotateY('5px'); */
+    transform: rotateY('5px');
 }
 
 .brand-text {
@@ -130,7 +130,7 @@ text-shadow: none;
     text-decoration-thickness: 1px;
 }
 
-/*ниже кнопка брони стола в шапке меню*/
+/* кнопка брони стола в шапке меню*/
 .reserve-btn {
     display: inline-block;
     padding: 6px 14px;
@@ -196,35 +196,121 @@ text-shadow: none;
     transform: translateX(-60px) translateY(-10px);
 }
 
+  /* ---------- Картинка мороженого справа ---------- */
+.ice-cream-img {
+    position: relative;
+    flex: 0 0 auto;
+    width: clamp(240px, 30vw, 440px);
+    margin-right: 20px;
+    z-index: 0;
+}
+
+.ice-cream-img > #ice-cream {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    border: none;
+    filter:
+        drop-shadow(1px 0 0 white)
+        drop-shadow(-1px 0 0 white)
+        drop-shadow(0 1px 0 white)
+        drop-shadow(0 -1px 0 white)
+        drop-shadow(18px 6px 2px rgba(0, 0, 0, 0.25));
+}
+
+.decor-frame { /* рамка поверх мороженого*/
+    position: absolute;
+    width: 450px;
+    height: 600px;
+    border: 1.5px solid var(--frame);
+     top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+     filter: drop-shadow(16px 3px 2px rgba(0, 0, 0, 0.4));
+}
+
+.star {
+    position: absolute;
+    z-index: 3;
+    width: 70px;
+    aspect-ratio: 1;
+    overflow: visible; /* чтобы обводка у краёв не обрезалась */
+}
+
+.star polygon {
+    fill: var(--fill);
+    stroke: var(--stroke);
+    stroke-width: 1px;           /* толщина обводки */
+    vector-effect: non-scaling-stroke; /* толщина одинаковая у всех звёзд */
+}
+
+.star1 {
+    --fill: #FFEDED;
+    --stroke: #DCADAD;
+    width: 200px;
+    top: 3%;
+    left: 0%;
+    transform: scale(1, 0.8) rotate(100deg);
+}
+
+.star2 {
+    --fill: #A53838;
+    --stroke: #934444;
+    z-index: 0;
+    width: 180px;
+    top: 10%;
+    right: -10%;
+    transform: scale(1, 0.9) rotate(110deg);
+}
+
+.star3 {
+    --fill: #FF9698;
+    --stroke: #DEACAD;
+    width: 110px;
+    bottom: 20%;
+    left: 20%;
+    transform: scale(1, 0.9) rotate(-100deg);
+}
+
+.star4 {
+    --fill: #FEA8A8;
+    --stroke: #DEACAD;
+    width: 130px;
+    bottom: 0%;
+    right: 12%;
+    transform: scale(0.95, 1) rotate(-100deg);
+}
+
 /* ---------- Кнопки ---------- */
 .buttons {
     display: flex;
     flex-wrap: wrap;
-    gap: 16px 24px;
+    gap: 20px;
     max-width: 480px;
     margin: 60px auto 0;
-    transform: translateX(-80px);   /* сдвигаем ОДИН раз весь блок, а не каждую кнопку */
+    transform: translateX(-60px);
 }
 
 .home-page .view,
 .delivery {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    flex: 1 1 0;                    /* обе кнопки одинаковой ширины */
-    min-width: 190px;
-    padding: 12px 25px;
+    display: inline-block;
+    padding: 10px 20px;
     border: 2.5px solid var(--pink);
-    border-radius: 15px;
+    border-radius: 17px;
     text-decoration: none;
     font-family: "Comfortaa", sans-serif;
-    font-size: 16px;
-    white-space: nowrap;
+    font-size: 18px;
     cursor: pointer;
+    /* transition должен стоять здесь, а не в :hover - тогда плавно и в обе стороны */
     transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
-    /* transform и margin-right отсюда убраны */
 }
 
+.home-page .view {
+    margin-right: 40px;
+}
 
 .view {
     color: #ffffff;
@@ -232,7 +318,8 @@ text-shadow: none;
 }
 
 .delivery {
-    color: var(--pink);
+    border-color: var(--frame) !important;
+    color: #AE302F !important;
     background-color: #ffffff;
 }
 
@@ -243,35 +330,11 @@ text-shadow: none;
     color: #ffffff;
 }
 
-/* ---------- Картинка справа ---------- */
-.hero-image {
-    position: relative;            /* чтобы звезда позиционировалась относительно картинки */
-    flex: 0 0 auto;
-    width: clamp(240px, 34vw, 452px);
-}
-
-.home-page .hero-image > img:not(.star1) {
-    display: block;
-    width: 100%;
-    height: auto;
-    border: 2px solid var(--frame);
-    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-/* Звезда в левом нижнем углу картинки; размер и место - в процентах, поэтому масштабируется вместе с ней */
-.star1 {
-    position: absolute;
-    left: 16%;
-    bottom: 15%;
-    width: 11%;
-    height: auto;
-}
-
 /* ==========================================================
    СТРАНИЦА "ABOUT"
    ========================================================== */
 .about-page {
-    overflow-x: hidden;
+    overflow-x: clip;
 }
 .about-box {
     position: relative;
@@ -279,11 +342,13 @@ text-shadow: none;
     align-items: center;
     justify-content: space-between;
     gap: 40px;
-    width: min(var(--max-width), 100% - 2 * var(--gutter));
+    width: 1600px;
     margin: 0 auto;
     padding: 40px clamp(20px, 5vw, 70px);
-    min-height: 0;
+    height: 900px;
     padding-block: 50px;
+    overflow: hidden;
+    transform: translateX(40px);
 }
 
 .about-text {
@@ -294,7 +359,6 @@ text-shadow: none;
     display:flex;
     flex-direction: column;
     align-items: flex-start;
-    transform: translateX(-40px);
 }
 
 .about-text .label {
@@ -336,65 +400,69 @@ text-shadow: none;
     transform: translateY(-10px);
 }
 
-.about-text a{
+.about-text a {
     display: inline-block;
-    padding: 12px 25px;
-    border: 1px solid var(--pink);
-    border-radius: 15px;
+    padding: 10px 20px;
+    border: 2.5px solid var(--pink);
+    border-radius: 17px;
     text-decoration: none;
     font-family: "Comfortaa", sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     cursor: pointer;
-    transition: background-color 0.3s;
-    transform: translateX(-161%) translateY(-50px);
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    margin-top: 60px;
+    margin-left: 280px;                         /* половина от 560px (max-width абзаца) */
+    transform: translateX(-50%) translateY(-50px);  /* -50% = половина ширины самой кнопки */
 }
 
 .about-image {
+    object-fit: cover;
+    object-position: right;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, #F9ECEA 30%);
+    mask-image: linear-gradient(to right, transparent 0%, #F9ECEA 30%);
     position: absolute;
     z-index: 0;
     width: 90%;
+    height: 100%;
     max-width: none;
     right: -18%;
-    top: 55%;
-    transform: translateY(-54%);
+    top: 0;
+    bottom: 0;
 }
-
+ 
 
 
 /*страница меню*/
 
-
-/* MAIN MENU */
+/* MENU */
 
 .menu-container {
-  max-width: 900px;
+  max-width: 910px;
   margin: 0 auto;
-  padding: 45px 0 55px;
+  padding: 57px 0 60px;
 }
-
-/* GRID WITH SIX CARDS */
 
 .menu-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
+  gap: 19px;
 }
 
-/* MENU CARD */
+/* CARD */
 
 .menu-card {
   min-width: 0;
-  padding: 7px;
+  padding: 8px 8px 16px;
   background-color: #fffaf8;
-  border: 1px solid #e7b4b9;
-  border-radius: 3px;
+  border: 1px solid #ebc3c6;
+  border-radius: 12px;
   overflow: hidden;
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .menu-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 5px 15px #c9768120;
+  box-shadow: 0 5px 15px rgba(201, 118, 129, 0.15);
 }
 
 /* IMAGE */
@@ -402,8 +470,8 @@ text-shadow: none;
 .image-container {
   position: relative;
   width: 100%;
-  height: 108px;
-  border-radius: 7px;
+  height: 128px;
+  border-radius: 8px;
   overflow: hidden;
 }
 
@@ -414,391 +482,81 @@ text-shadow: none;
   object-fit: cover;
 }
 
-/* SMALL LABEL ON IMAGE */
-
 .image-tag {
   position: absolute;
-  top: 8px;
-  left: 8px;
-  padding: 4px 8px;
-  border-radius: 5px;
+  top: 9px;
+  left: 9px;
+  padding: 3px 10px;
+  border-radius: 8px;
   background-color: #fffaf8;
   color: #b96a74;
-  font-size: 9px;
-  font-style: italic;
+  font-family: "Architects Daughter", cursive;
+  font-size: 10px;
   transform: rotate(-3deg);
 }
 
 /* CARD TEXT */
 
 .card-info {
-  padding: 7px 3px 5px;
+  padding: 10px 5px 0;
 }
 
 .card-heading {
   display: flex;
-  align-items: flex-start;
+  align-items: baseline;
   justify-content: space-between;
-  gap: 6px;
+  gap: 8px;
 }
 
 .card-heading h2 {
   margin: 0;
-  font-size: 13px;
-  font-weight: normal;
+  font-size: 17px;
+  font-weight: 400;
   line-height: 1.4;
+  color: #a8606a;
 }
 
 .price {
-  padding-top: 2px;
-  font-size: 11px;
+  font-size: 15px;
   white-space: nowrap;
+  color: #c0707a;
 }
 
 .card-info p {
-  margin: 6px 0 0;
-  color: #bd7b82;
-  font-size: 9px;
-  line-height: 1.6;
+  margin: 8px 0 0;
+  color: #b07a80;
+  font-family: "Poppins", "Comfortaa", sans-serif;
+  font-size: 11px;
+  line-height: 1.8;
 }
+
+/* CATEGORY BUTTONS */
 
 .category-buttons {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 9px;
-  margin-top: 24px;
+  gap: 11px;
+  margin-top: 32px;
 }
 
 .category-btn {
-  padding: 8px 17px;
+  padding: 9px 21px;
   border: 1px solid #edc3c6;
   border-radius: 25px;
   background-color: #fffaf8;
-  color: #c87580;
-  font-family: inherit;
-  font-size: 11px;
+  color: #c0707a;
+  font-family: "Comfortaa", sans-serif;
+  font-size: 13px;
   cursor: pointer;
   transition: background-color 0.2s, color 0.2s;
 }
 
 .category-btn:hover,
 .category-btn.selected {
-  background-color: #c97681;
-  border-color: #c97681;
-  color: white;
+  background-color: #c27580;
+  border-color: #c27580;
+  color: #fff;
 }
 
-/* ==========================================================
-   АДАПТИВ: планшеты и телефоны.
-   @media срабатывает, когда экран УЖЕ указанной ширины.
-   ========================================================== */
-
-/* Планшет (до 860px): шапка в столбик, картинка уходит под текст */
-@media (max-width: 480px) {
-    .header-inner {
-        flex-direction: column;
-        justify-content: center;
-        gap: 12px;
-    }
-
-    .main-nav {
-        justify-content: center;
-    }
-
-    .center-container,
-    .about-box {
-        flex-direction: column;
-        min-height: 0;
-        gap: 40px;
-        margin: 24px auto;
-        padding-block: 40px;
-    }
-
-    .text-container {
-        flex: 0 0 auto;
-        width: 100%;
-    }
-
-    .hero-image,
-    .about-image {
-        width: min(400px, 80%);
-    }
-
-  
-.buttons {
-    justify-content: center;
-    margin-top: 40px;
-    transform: none;
-}
-
-.view,
-.delivery {
-    margin-left: 0;
-    padding: 13px 20px;
-    font-size: 15px;
-}
-
-    #introduction {
-        letter-spacing: 0;
-        text-align: left;
-        padding-left: 10%;
-        padding-top:10px;
-    }
-
-    #text-introduction {
-        text-align: left;
-        margin: 10px auto 0;
-        padding-left: 30%;
-    }
-   
-        .main-nav a {
-        font-size: 15px;
-        margin: 10px auto 0;
-
-        }
-
-    .about-text {
-        text-align: center;
-    }
-
-    .about-text p:not(.label) {
-        margin-inline: auto;
-        text-align: left;          /* длинный текст читается лучше с ровным левым краем */
-    }
-
-    .about-text .buttons {
-        justify-content: center;
-    }
-}
-
-/* Телефон (до 480px) */
-@media (max-width: 1024px) and (min-width: 680px) {
-    .logo {
-        width: 48px;
-        margin-left:250px;
-       
-    }
-
-    .brand-name {gi
-        font-size: 22px;
-    }
-
-    .main-nav {
-        gap: 5px 25px;
-       
-        padding-left: 100px;
-    }
-
-    .main-nav a {
-        font-size: 14px;
-    }
-
-    .center-container,
-    .about-box {
-        border-width: 4px;
-        gap: 30px;
-        padding: 30px 16px;
-    }
-
-    #introduction {
-        letter-spacing: 0;
-        margin-left:10%;
-    }
- 
-    .buttons {
-    justify-content: center;
-    margin-top: 40px;
-    transform: none;
-}
-
-.view,
-.delivery {
-    margin-left: 0;
-    padding: 13px 20px;
-    font-size: 15px;
-}
-    
-#text-introduction {
-        text-align: center;
-        margin: 15px 10px 0;
-        padding-left: 20%;
-        text-align: left;
-    }
-    .view,
-    .delivery {
-        font-size: 15px;
-        padding: 11px 20px;
-    }
-
-    .about-text p:not(.label) {
-        font-size: 16px;
-        line-height: 1.8;
-    }
-}
-
-    
-@media(min-width:1025px) and (max-width: 1366px) {
-    .logo {
-        width: 48px;
-        margin-left:20px;
-    }
-
-    .brand-name {
-        font-size: 22px;
-    }
-
-    .main-nav {
-       gap:30px;
-        margin-left:20px;
-    }
-
-    .main-nav a {
-        font-size: 14px;
-    }
-
-     #text-introduction {
-        text-align: left;
-       padding-left: 80px;
-       margin-left:25px;
-        
-    }
-
-.buttons {
-    justify-content: center;
-    margin-top: 40px;
-    transform: none;
-}
-
-.view,
-.delivery {
-    margin-left: 0;
-    padding: 10px 20px;
-    font-size: 15px;
-}
-
-    .center-container,
-    .about-box {
-        border-width: 4px;
-        gap: 30px;
-        padding: 30px 16px;
-    }
-
-    #introduction {
-        letter-spacing: 0;
-        margin-left:10%;
-    }
-}
-
-/* LANGUAGE SWITCH */
-
-.language-switch {
-    display: flex;
-    gap: 5px;
-}
-
-.lang-btn {
-    background-color: transparent;
-    border: 1px solid var(--border);
-    color: var(--brown);
-    padding: 7px 10px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-family: inherit;
-    font-weight: bold;
-}
-
-.lang-btn.active-lang {
-    background-color: var(--pink);
-    color: white;
-}
-
-/* REGISTER BUTTON */
-
-.register-btn {
-    background-color: var(--pink);
-    color: white;
-    border: 2px solid var(--pink);
-    padding: 8px 14px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-family: inherit;
-    font-weight: bold;
-}
-
-.register-btn:hover {
-    background-color: #f38d99;
-}
-
-/* REGISTRATION WINDOW */
-
-.register-modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-.register-content {
-    position: relative;
-    background-color: #F9ECEA;
-    padding: 35px;
-    width: 90%;
-    max-width: 400px;
-    border: 2px solid var(--border);
-    border-radius: 20px;
-    text-align: center;
-}
-
-.register-content h2 {
-    color: var(--brown);
-    margin-bottom: 10px;
-}
-
-.register-content p {
-    color: var(--brown);
-    margin-bottom: 20px;
-}
-
-.close-register {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    background: none;
-    border: none;
-    font-size: 28px;
-    color: var(--brown);
-    cursor: pointer;
-}
-
-#register-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-#register-form input {
-    padding: 12px;
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    font-family: inherit;
-}
-
-#register-form button {
-    background-color: var(--pink);
-    color: white;
-    border: none;
-    padding: 12px;
-    border-radius: 20px;
-    font-family: inherit;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-#register-form button:hover {
-    background-color: var(--brown);
-}
